@@ -8,7 +8,6 @@ RUN ./bin/elasticsearch-plugin install analysis-kuromoji
 RUN ./bin/elasticsearch-plugin install analysis-smartcn
 RUN ./bin/elasticsearch-plugin install analysis-stempel
 RUN echo "# allow user 'elasticsearch' mlockall\nelasticsearch soft memlock unlimited\nelasticsearch hard memlock unlimited" >> /etc/security/limits.conf
-RUN echo "vm.max_map_count=262144" >> /etc/sysctl.conf
 
 USER elasticsearch
 
