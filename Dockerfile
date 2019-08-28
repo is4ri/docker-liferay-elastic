@@ -3,6 +3,8 @@ LABEL maintainer="Emertyl <lremy@is4ri.com>"
 
 WORKDIR /usr/share/elasticsearch
 
+COPY --chown=elasticsearch:elasticsearch conf/elasticsearch.yml ./config/
+
 RUN ./bin/elasticsearch-plugin install analysis-icu
 RUN ./bin/elasticsearch-plugin install analysis-kuromoji
 RUN ./bin/elasticsearch-plugin install analysis-smartcn
